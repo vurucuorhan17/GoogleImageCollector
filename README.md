@@ -1,5 +1,5 @@
                                                       GOOGLE IMAGE COLLECTOR
-                                                             README
+                                                             
                                                             
 Google Resimler'den aradığınız bir ifadenin linkini alarak programda Document dc = Jsoup.connect(""); satırında connect() fonksiyonun içine
 çift tırnak arasına yerleştirin ve betiği çalıştırın.
