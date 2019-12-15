@@ -25,6 +25,7 @@ import org.apache.commons.lang3.StringUtils;
 public class GoogleImageCollector {
 
     public static void main(final String[] args) throws IOException {
+        // İstediğiniz Google Resimler linkini alttaki satıra girin.
         final Document dc = Jsoup.connect("https://www.google.com/search?client=firefox-b-ab&biw=1366&bih=589&tbm=isch&sa=1&ei=7fbuXdqEEa2HjLsP6IOx-Ac&q=s%C3%BCt+markalar%C4%B1&oq=s%C3%BCt+markalar%C4%B1&gs_l=img.3..0l3j0i5i30l7.30288.56181..56378...0.0..0.348.3482.0j8j6j3......0....1..gws-wiz-img.....0..0i67j0i10.hmIYSIXd3v0&ved=0ahUKEwiar7j6-KnmAhWtA2MBHehBDH8Q4dUDCAY&uact=5#imgrc=_").timeout(6000).get();
         final Elements body = dc.select("body#gsr");
         ArrayList array;
@@ -47,7 +48,7 @@ public class GoogleImageCollector {
                                             {
                                                 URL url = new URL((String)array.get(i));
                                                 ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-                                                FileOutputStream fos = new FileOutputStream("süt"+index+".jpg");
+                                                FileOutputStream fos = new FileOutputStream("image"+index+".jpg");
                                                 fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
                                                 fos.close();
                                                 index++;
